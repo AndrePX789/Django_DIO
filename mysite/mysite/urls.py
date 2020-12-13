@@ -20,4 +20,9 @@ from foo import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/<nome>/<int:idade>/', views.hello),
+    path('soma/<int:num1>/<int:num2>/', views.soma),
+    path('subtracao/<int:num1>/<int:num2>/', views.sub),
+    path('multiplicacao/<int:num1>/<int:num2>/', views.mult),
+    path('divisao/<int:num1>/<int:num2>/', views.div),
+
 ]
