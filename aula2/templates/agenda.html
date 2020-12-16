@@ -9,11 +9,13 @@
     <ul>
         {% for evento in eventos %}
         <li>
-            <strong>
-                {{evento.titulo}} - {{evento.local}} - {{evento.get_data_evento}}
-            </strong>
-            &nbsp;<a href="evento/?id={{ evento.id }}"><button type="button">Editar</button></a>&nbsp;
-            <a href="evento/delete/{{ evento.id }}"><button type="button">Excluir</button></a>
+            <div style={% if evento.get_evento_atrasado %} "color:red" {% endif %}>
+                <strong>
+                    {{evento.titulo}} - {{evento.local}} - {{evento.get_data_evento}}
+                </strong>
+                &nbsp;<a href="evento/?id={{ evento.id }}"><button type="button">Editar</button></a>&nbsp;
+                <a href="evento/delete/{{ evento.id }}"><button type="button">Excluir</button></a>
+            </div>
         </li>
         {% endfor %}
     </ul>
